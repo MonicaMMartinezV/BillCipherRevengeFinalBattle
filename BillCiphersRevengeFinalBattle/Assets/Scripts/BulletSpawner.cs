@@ -27,6 +27,13 @@ public class BulletSpawner : MonoBehaviour
         spawnTimer = spawnInterval; // Inicializa el temporizador
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, transform.forward * 2f); // Línea roja hacia adelante
+    }
+
+
     void FixedUpdate()
     {
         // Controla el temporizador para disparar balas
@@ -63,7 +70,7 @@ public class BulletSpawner : MonoBehaviour
         {
             for (int i = 0; i < 8; i++)
             {
-                GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+                GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.LookRotation(transform.forward));
                 bullet.transform.Rotate(Vector3.right, i * 45);
 
                 // Agrega fuerza al Rigidbody de la bala para moverla en la dirección de la rotación
@@ -132,4 +139,3 @@ public class BulletSpawner : MonoBehaviour
         }
     }
 }
-

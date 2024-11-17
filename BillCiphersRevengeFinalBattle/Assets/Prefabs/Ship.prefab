@@ -52,8 +52,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6f8b38a34c0bb444da73a33100d9cfbf, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f8b38a34c0bb444da73a33100d9cfbf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4659922457598197862}
   m_SourcePrefab: {fileID: 100100000, guid: 6f8b38a34c0bb444da73a33100d9cfbf, type: 3}
+--- !u!1 &7340730255650500571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f8b38a34c0bb444da73a33100d9cfbf, type: 3}
+  m_PrefabInstance: {fileID: 7574749560565633674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4659922457598197862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7340730255650500571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c203d6d337f8f84c9a079942da60f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePoints: 5
+  moveSpeed: 5
+  bulletPrefab: {fileID: 6320865848421751907, guid: 9b4e673e7fe6c7645b88c0008223707f, type: 3}
+  bulletSpawnPoint: {fileID: 7968085908613428577}
+--- !u!4 &7968085908613428577 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6f8b38a34c0bb444da73a33100d9cfbf, type: 3}
+  m_PrefabInstance: {fileID: 7574749560565633674}
+  m_PrefabAsset: {fileID: 0}

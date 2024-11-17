@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueBullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public float bulletLife = 1f;
     public float speed = 1f;
+
     public string objectiveTag = "Player";
     
 
@@ -13,7 +14,7 @@ public class BlueBullet : MonoBehaviour
 
     void Start()
     {
-
+        // Opcional: si necesitas configurar la posición inicial de la bala.
     }
 
     void OnTriggerEnter(Collider other)
