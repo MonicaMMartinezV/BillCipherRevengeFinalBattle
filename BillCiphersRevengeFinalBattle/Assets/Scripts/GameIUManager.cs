@@ -50,10 +50,12 @@ public class GameIUManager : MonoBehaviour
             int playerBulletCount = GameObject.FindGameObjectsWithTag(MY_BULLET_TAG).Length;
             int bulletCount = enemyBulletCount + playerBulletCount;
 
+            /*
             Debug.Log("Balas en el escenario: " + bulletCount);
             Debug.Log("Balas del enemigo: " + enemyBulletCount);
             Debug.Log("Balas del jugador: " + playerBulletCount);
-
+            */
+            
             bulletCounterText.text = "Balas en el escenario: " + bulletCount;
             enemyBulletCounterText.text = "Balas del enemigo: " + enemyBulletCount;
             playerBulletCounterText.text = "Balas del jugador: " + playerBulletCount;

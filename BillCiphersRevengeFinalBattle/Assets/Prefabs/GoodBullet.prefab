@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50baf882599f984e9dbefddc80f23ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletLife: 6
+  bulletLife: 2
   speed: 20
   objectiveTag: Enemy
 --- !u!65 &6980225603667580922

@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public float bulletLife = 1f;
     public float speed = 1f;
-
     public string objectiveTag = "Player";
-
     private float timer = 0f;
     private const string MY_BULLET_TAG    = "Bullet";
-
+    // Start is called before the first frame update
     void Start()
     {
-        // Opcional: si necesitas configurar la posición inicial de la bala.
+        
     }
 
     void OnTriggerEnter(Collider objectCollider)
@@ -28,6 +26,7 @@ public class Bullet : MonoBehaviour
             Destroy(objectCollider.gameObject);
         }
     }
+
     // Update is called once per frame
     void Update()
     {

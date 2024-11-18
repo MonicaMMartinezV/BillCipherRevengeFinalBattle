@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fb69b848ef40ec7479bd7db979abdc1f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4359239931351510864, guid: fb69b848ef40ec7479bd7db979abdc1f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -207,7 +207,7 @@ PrefabInstance:
       addedObject: {fileID: 3657420536690250689}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb69b848ef40ec7479bd7db979abdc1f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7210781098500934885}
+      addedObject: {fileID: 1402585209682794359}
   m_SourcePrefab: {fileID: 100100000, guid: fb69b848ef40ec7479bd7db979abdc1f, type: 3}
 --- !u!4 &2817525791743624483 stripped
 Transform:
@@ -246,7 +246,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
---- !u!65 &7210781098500934885
+--- !u!65 &1402585209682794359
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

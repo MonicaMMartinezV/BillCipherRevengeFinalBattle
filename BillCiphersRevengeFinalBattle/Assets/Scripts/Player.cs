@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab; // Prefab de la bala
     public Transform bulletSpawnPoint; // Punto de generación de la bala
     private GameIUManager gameIUManager; // Referencia al GameIUManager
+    
 
     
 

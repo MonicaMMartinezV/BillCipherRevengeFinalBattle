@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50baf882599f984e9dbefddc80f23ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletLife: 5
+  bulletLife: 10
   speed: 2
   objectiveTag: Player
 --- !u!65 &-5756725098630513134
