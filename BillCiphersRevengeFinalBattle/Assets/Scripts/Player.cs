@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int lifePoints = 5; // Puntos de vida del jugador
+    [SerializeField]
+    public int lifePoints; // Puntos de vida del jugador
+
+    private const string ENEMY_BULLET_TAG = "EnemyBullet";
+    private const string MY_BULLET_TAG    = "Bullet";
+
     public float moveSpeed = 5f; // Velocidad de movimiento del jugador
     public GameObject bulletPrefab; // Prefab de la bala
     public Transform bulletSpawnPoint; // Punto de generación de la bala
+    private GameIUManager gameIUManager; // Referencia al GameIUManager
+
+    
+
     void Start()
     {
         // Calcula los límites de la cámara en el espacio del mundo
+        gameIUManager = GameObject.FindObjectOfType<GameIUManager>();
+        gameIUManager.UpdateLifeCounter(lifePoints);
     }
 
     void Update()
@@ -42,5 +53,40 @@ public class Player : MonoBehaviour
             Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         }
         transform.position = newPosition;
+    }
+
+    void OnTriggerEnter(Collider objectCollider)
+    {
+        // Detectar si colisiona con una bala
+        if (objectCollider.CompareTag(ENEMY_BULLET_TAG))
+        {
+            //Debug.Log("Colisión con una bala: " + objectCollider.gameObject.name);
+
+            // Reducir vida del jugador
+            RecieveDamage();
+
+            // Destruir la bala después de la colisión
+            Destroy(objectCollider.gameObject);
+        }
+    }
+
+    void RecieveDamage() {
+        lifePoints--;
+        gameIUManager.UpdateLifeCounter(lifePoints);
+
+        if (lifePoints <= 0) {
+            // Game Over
+            Debug.Log("Game Over");
+            HandlePlayerDeath();
+        }
+    }
+
+    void HandlePlayerDeath()
+    {
+        // Desactiva al jugador
+        gameObject.SetActive(false);
+
+        // Muestra la pantalla de Game Over
+        gameIUManager.ShowGameOverScreen();
     }
 }

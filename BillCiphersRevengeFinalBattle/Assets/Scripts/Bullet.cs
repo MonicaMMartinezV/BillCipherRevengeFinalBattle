@@ -8,7 +8,6 @@ public class Bullet : MonoBehaviour
     public float speed = 1f;
 
     public string objectiveTag = "Player";
-    
 
     private float timer = 0f;
 
@@ -19,10 +18,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(objectiveTag))
-        {
-            Destroy(this.gameObject);
-        }
+        // Encuentra el GameUIManager
     }
 
     // Update is called once per frame
