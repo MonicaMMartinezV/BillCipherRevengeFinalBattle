@@ -111,7 +111,7 @@ public class BulletSpawner : MonoBehaviour
 
     void RegularBullet() {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-
+        
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {

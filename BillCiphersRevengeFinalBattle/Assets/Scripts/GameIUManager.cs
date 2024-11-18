@@ -14,6 +14,9 @@ public class GameIUManager : MonoBehaviour
 
     public TMPro.TextMeshProUGUI lifeCounterText;
 
+    public TMPro.TextMeshProUGUI playerBulletCounterText;
+    public TMPro.TextMeshProUGUI enemyBulletCounterText;
+
     public GameObject gameOverScreen;
 
     public GameObject victoryScreen;
@@ -22,7 +25,6 @@ public class GameIUManager : MonoBehaviour
 
     private bool newGame = true;
     private bool gameEnded = false; // Para evitar múltiples finales del juego
-
 
     //private Player player; // Referencia al componente Player
 
@@ -44,10 +46,18 @@ public class GameIUManager : MonoBehaviour
     {
         try 
         {
-            int bulletCount = GameObject.FindGameObjectsWithTag(ENEMY_BULLET_TAG).Length;
-            bulletCount    += GameObject.FindGameObjectsWithTag(MY_BULLET_TAG).Length;
+            int enemyBulletCount = GameObject.FindGameObjectsWithTag(ENEMY_BULLET_TAG).Length;
+            int playerBulletCount = GameObject.FindGameObjectsWithTag(MY_BULLET_TAG).Length;
+            int bulletCount = enemyBulletCount + playerBulletCount;
+
+            Debug.Log("Balas en el escenario: " + bulletCount);
+            Debug.Log("Balas del enemigo: " + enemyBulletCount);
+            Debug.Log("Balas del jugador: " + playerBulletCount);
+
             bulletCounterText.text = "Balas en el escenario: " + bulletCount;
-        }
+            enemyBulletCounterText.text = "Balas del enemigo: " + enemyBulletCount;
+            playerBulletCounterText.text = "Balas del jugador: " + playerBulletCount;
+        } 
         catch {}
     }
 
@@ -63,7 +73,7 @@ public class GameIUManager : MonoBehaviour
         float elapsedTime = Time.time;
         
         float timeDifference = elapsedTime - startTime;
-        
+
         if (timeDifference >= timeLimit)
         {
             gameEnded = true;

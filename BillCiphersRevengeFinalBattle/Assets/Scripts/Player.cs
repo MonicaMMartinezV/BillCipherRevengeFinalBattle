@@ -51,6 +51,8 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            gameIUManager.UpdateBulletCount();
+
         }
         transform.position = newPosition;
     }
